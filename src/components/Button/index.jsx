@@ -1,7 +1,9 @@
-const Button = () => {
+import "./style.css";
+
+const Button = ({ createStudents, students, text }) => {
   return (
     <>
-      <button>Teste</button>
+      <button onClick={() => createStudents(students)}>{text}</button>
     </>
   );
 };

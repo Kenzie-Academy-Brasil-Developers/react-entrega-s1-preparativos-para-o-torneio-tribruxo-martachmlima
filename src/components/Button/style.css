@@ -1,0 +1,11 @@
+button {
+  color: #f11e02;
+  font-family: "Berkshire Swash", cursive;
+  font-size: 20px;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: burlywood;
+  cursor: pointer;
+  margin: 20px 0;
+}
