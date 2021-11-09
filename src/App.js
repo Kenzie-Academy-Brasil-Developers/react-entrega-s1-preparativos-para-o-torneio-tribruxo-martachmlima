@@ -25,17 +25,26 @@ function App() {
   }, []);
 
   function createStudents(arr) {
-    const arr2 = [];
+    const slytherin = arr.filter((item) => item.house === "Slytherin");
+    const ravenclaw = arr.filter((item) => item.house === "Ravenclaw");
+    const gryffindor = arr.filter((item) => item.house === "Gryffindor");
+    const hufflepuff = arr.filter((item) => item.house === "Hufflepuff");
 
-    const wizard = arr.filter((item) => item.house === "Slytherin");
-    const wizard2 = arr.filter((item) => item.house === "Ravenclaw");
-    const wizard3 = arr.filter((item) => item.house === "Gryffindor");
+    const fourHouses = [
+      slytherin[Math.floor(Math.random() * slytherin.length)],
+      ravenclaw[Math.floor(Math.random() * ravenclaw.length)],
+      gryffindor[Math.floor(Math.random() * gryffindor.length)],
+      hufflepuff[Math.floor(Math.random() * hufflepuff.length)],
+    ];
 
-    arr2[0] = wizard[Math.floor(Math.random() * wizard.length)];
-    arr2[1] = wizard2[Math.floor(Math.random() * wizard2.length)];
-    arr2[2] = wizard3[Math.floor(Math.random() * wizard3.length)];
+    const arrDisplay = [];
 
-    setDisplay(arr2);
+    while (arrDisplay.length < 3) {
+      let wizard = fourHouses[Math.floor(Math.random() * fourHouses.length)];
+      if (arrDisplay.indexOf(wizard) === -1) arrDisplay.push(wizard);
+    }
+
+    setDisplay(arrDisplay);
     setShowWizards(true);
   }
 
